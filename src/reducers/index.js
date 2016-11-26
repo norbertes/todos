@@ -1,12 +1,28 @@
 import { combineReducers } from 'redux';
-import todos, * as fromTodos from './todos';
+import byId, * as fromById from './byId';
+import createList, * as fromList from './createList';
 
-const todoApp = combineReducers({
-  todos,
+const listByFilter = combineReducers({
+  all: createList('all'),
+  active: createList('active'),
+  completed: createList('completed'),
 });
 
-export default todoApp;
+const todos = combineReducers({
+  byId,
+  listByFilter,
+});
 
-// named export
-export const getVisibleTodos = (state, filter) =>
-  fromTodos.getVisibleTodos(state.todos, filter);
+// default export is always the reducer
+export default todos;
+
+// function that prepares data to be displayed by UI
+// (selector function - selectrs from current state)
+// (data is prepared in reducer, not component itself)
+export const getVisibleTodos = (state, filter) => {
+  const ids = fromList.getIds(state.listByFilter[filter]);
+  return ids.map(id => fromById.getTodo(state.byId, id));
+};
+
+export const getIsFetching = (state, filter) =>
+  fromList.getIsFetching(state.listByFilter[filter]);
