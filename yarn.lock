@@ -2005,7 +2005,7 @@ lodash.keysin@^3.0.0:
     lodash.isarguments "^3.0.0"
     lodash.isarray "^3.0.0"
 
-lodash@^4.0.0, lodash@^4.17.2, lodash@^4.2.0, lodash@^4.2.1, lodash@^4.3.0:
+lodash@^4.0.0, lodash@^4.11.2, lodash@^4.17.2, lodash@^4.2.0, lodash@^4.2.1, lodash@^4.3.0:
   version "4.17.2"
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.2.tgz#34a3055babe04ce42467b607d700072c7ff6bf42"
 
@@ -2176,6 +2176,12 @@ nopt@~3.0.6:
 normalize-path@^2.0.1:
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/normalize-path/-/normalize-path-2.0.1.tgz#47886ac1662760d4261b7d979d241709d3ce3f7a"
+
+normalizr@^2.2.1:
+  version "2.2.1"
+  resolved "https://registry.yarnpkg.com/normalizr/-/normalizr-2.2.1.tgz#d4e5217b30d2a1a5b918bf3466ff0f8914507be5"
+  dependencies:
+    lodash "^4.11.2"
 
 npmlog@^4.0.0:
   version "4.0.0"
